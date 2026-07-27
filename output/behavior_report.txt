@@ -1,0 +1,31 @@
+============================================================
+LIFEOS BEHAVIORAL REPORT
+============================================================
+
+Behavioral Entropy : 2.5065
+Context Switch Cost : 31.00
+
+Life Graph Summary
+----------------------------
+Nodes : 6
+Edges : 22
+
+Recurring Loops
+----------------------------
+Chrome -> VS Code -> YouTube (3 times)
+YouTube -> Chrome -> VS Code (3 times)
+Chrome -> VS Code -> Spotify (3 times)
+VS Code -> Spotify -> WhatsApp (3 times)
+Spotify -> WhatsApp -> Chrome (3 times)
+WhatsApp -> Chrome -> VS Code (3 times)
+VS Code -> Chrome -> YouTube (2 times)
+Chrome -> YouTube -> Gmail (2 times)
+YouTube -> Gmail -> VS Code (2 times)
+Gmail -> VS Code -> Chrome (2 times)
+VS Code -> WhatsApp -> Chrome (2 times)
+VS Code -> YouTube -> Gmail (2 times)
+YouTube -> Gmail -> Chrome (2 times)
+Gmail -> Chrome -> VS Code (2 times)
+WhatsApp -> Chrome -> YouTube (2 times)
+Gmail -> Spotify -> YouTube (2 times)
+Chrome -> VS Code -> WhatsApp (2 times)

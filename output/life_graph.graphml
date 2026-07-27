@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d0" for="edge" attr.name="weight" attr.type="long" />
+  <graph edgedefault="directed">
+    <node id="Chrome" />
+    <node id="VS Code" />
+    <node id="YouTube" />
+    <node id="Spotify" />
+    <node id="WhatsApp" />
+    <node id="Gmail" />
+    <edge source="Chrome" target="VS Code">
+      <data key="d0">10</data>
+    </edge>
+    <edge source="Chrome" target="YouTube">
+      <data key="d0">4</data>
+    </edge>
+    <edge source="Chrome" target="Gmail">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="Chrome" target="Spotify">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="VS Code" target="YouTube">
+      <data key="d0">3</data>
+    </edge>
+    <edge source="VS Code" target="Spotify">
+      <data key="d0">3</data>
+    </edge>
+    <edge source="VS Code" target="Chrome">
+      <data key="d0">4</data>
+    </edge>
+    <edge source="VS Code" target="WhatsApp">
+      <data key="d0">3</data>
+    </edge>
+    <edge source="VS Code" target="Gmail">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="YouTube" target="Chrome">
+      <data key="d0">3</data>
+    </edge>
+    <edge source="YouTube" target="Gmail">
+      <data key="d0">5</data>
+    </edge>
+    <edge source="YouTube" target="Spotify">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="YouTube" target="VS Code">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="Spotify" target="WhatsApp">
+      <data key="d0">4</data>
+    </edge>
+    <edge source="Spotify" target="VS Code">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="Spotify" target="YouTube">
+      <data key="d0">2</data>
+    </edge>
+    <edge source="Spotify" target="Chrome">
+      <data key="d0">1</data>
+    </edge>
+    <edge source="WhatsApp" target="Chrome">
+      <data key="d0">5</data>
+    </edge>
+    <edge source="WhatsApp" target="YouTube">
+      <data key="d0">2</data>
+    </edge>
+    <edge source="Gmail" target="VS Code">
+      <data key="d0">2</data>
+    </edge>
+    <edge source="Gmail" target="Chrome">
+      <data key="d0">2</data>
+    </edge>
+    <edge source="Gmail" target="Spotify">
+      <data key="d0">3</data>
+    </edge>
+  </graph>
+</graphml>

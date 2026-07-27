@@ -1,0 +1,61 @@
+# ==========================================
+# LifeOS - Requirements
+# Tynovate AI Internship 2026
+# Weeks 1 - 6
+# ==========================================
+
+# --------------------------
+# Data Processing
+# --------------------------
+pandas
+
+# --------------------------
+# Machine Learning
+# --------------------------
+scikit-learn
+xgboost
+hmmlearn
+
+# --------------------------
+# Statistical Analysis
+# --------------------------
+statsmodels
+
+# --------------------------
+# Graph Analysis
+# --------------------------
+networkx
+
+# --------------------------
+# Data Visualization
+# --------------------------
+matplotlib
+
+# --------------------------
+# Natural Language Processing
+# --------------------------
+nltk
+
+# --------------------------
+# Model Serialization
+# --------------------------
+joblib
+
+# --------------------------
+# Desktop Notifications
+# --------------------------
+plyer
+
+# --------------------------
+# Telegram Bot
+# --------------------------
+python-telegram-bot
+
+# --------------------------
+# Numerical Computing
+# --------------------------
+numpy
+fastapi
+uvicorn
+pydantic
+pytest
