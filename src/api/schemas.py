@@ -8,3 +8,8 @@ class ActivityLog(BaseModel):
     duration: int
 
     category: str
+class Goal(BaseModel):
+
+        goal: str
+
+        target: int

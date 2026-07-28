@@ -2,6 +2,12 @@ from fastapi import APIRouter
 from src.discipline_score import DisciplineScoreEngine
 from src.api.schemas import ActivityLog
 from src.api.database import insert_log
+from src.api.schemas import Goal
+
+from src.api.database import (
+    insert_goal,
+    get_goals
+)
 
 router = APIRouter()
 
@@ -18,6 +24,22 @@ def create_log(log: ActivityLog):
     return {
         "message": "Log created successfully."
     }
+@router.post("/goals")
+def create_goal(goal: Goal):
+
+    insert_goal(
+
+        goal.goal,
+
+        goal.target
+
+    )
+
+    return {
+
+        "message": "Goal added successfully."
+
+    }
 
 
 @router.get("/")
@@ -26,7 +48,16 @@ def home():
     return {
         "message": "LifeOS API is running successfully."
     }
+@router.get("/goals")
+def read_goals():
 
+    goals = get_goals()
+
+    return {
+
+        "goals": goals
+
+    }
 
 @router.get("/score")
 def get_score():
