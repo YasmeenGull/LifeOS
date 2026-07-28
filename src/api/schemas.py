@@ -1,12 +1,10 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 class ActivityLog(BaseModel):
+
     activity: str
-    duration: int = Field(gt=0)
+
+    duration: int
+
     category: str
-
-
-class Goal(BaseModel):
-    name: str
-    target: int = Field(gt=0)

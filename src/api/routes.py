@@ -1,7 +1,23 @@
 from fastapi import APIRouter
 from src.discipline_score import DisciplineScoreEngine
+from src.api.schemas import ActivityLog
+from src.api.database import insert_log
 
 router = APIRouter()
+
+
+@router.post("/log")
+def create_log(log: ActivityLog):
+
+    insert_log(
+        activity=log.activity,
+        duration=log.duration,
+        category=log.category
+    )
+
+    return {
+        "message": "Log created successfully."
+    }
 
 
 @router.get("/")
