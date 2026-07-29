@@ -51,7 +51,23 @@ def insert_log(activity, duration, category):
 
     connection.commit()
     connection.close()
+def get_logs():
 
+    connection = get_connection()
+
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        SELECT id, activity, duration, category
+        FROM logs
+        ORDER BY id DESC
+    """)
+
+    rows = cursor.fetchall()
+
+    connection.close()
+
+    return rows
 
 def create_goals_table():
 

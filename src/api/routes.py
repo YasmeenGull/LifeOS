@@ -5,7 +5,9 @@ from src.api.database import insert_log
 from src.api.schemas import Goal
 
 from src.api.database import (
+    insert_log,
     insert_goal,
+    get_logs,
     get_goals
 )
 
@@ -23,6 +25,16 @@ def create_log(log: ActivityLog):
 
     return {
         "message": "Log created successfully."
+    }
+@router.get("/logs")
+def read_logs():
+
+    logs = get_logs()
+
+    return {
+
+        "logs": logs
+
     }
 @router.post("/goals")
 def create_goal(goal: Goal):
