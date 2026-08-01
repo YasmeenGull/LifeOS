@@ -36,12 +36,13 @@ The project follows **Clean Architecture**, **Modular Programming**, and **Softw
 # 🚀 Weekly Progress
 
 | Week | Theme | Status |
-|------|-------------------------------|:------:|
+|------|-------------------------------------------|:------:|
 | Week 1 | Foundations & Environment Setup | ✅ |
 | Week 2 | Behavioral Data Ingestion | ✅ |
 | Week 3 | Behavioral Engine & Life Graph | ✅ |
 | Week 4 | Prediction Engine & Causal Discovery | ✅ |
 | Week 5 | Real-Time Intervention System | ✅ |
+| Week 6 | Discipline Score Engine & Backend API | ✅ |
 
 ---
 
@@ -84,33 +85,33 @@ The project follows **Clean Architecture**, **Modular Programming**, and **Softw
 - Intervention Engine
 - Feedback Tracking
 
+## ✅ Week 6
+- Discipline Score Engine
+- Behavioral Debt Engine
+- FastAPI Backend
+- REST API Endpoints
+- OpenAPI (Swagger) Documentation
+- SQLite API Integration
+- Goal Management API
+- Unit Testing
+- Integration Testing
+- Basic Load Testing
+
 ---
 
 # 📂 Project Structure
 
 =======
-
-```text
- (Complete Week 5: Real-Time Intervention System)
 Internship/
 
 ├── data/
-│   ├── sample/
 │   ├── raw/
-│   └── processed/
+│   ├── processed/
+│   └── sample/
 │
 ├── docs/
 │   └── Architecture_Design_Document.md
 │
-├── output/
-│   ├── behavior_report.txt
-│   ├── feedback.csv
-│   ├── life_graph.graphml
-│   └── feature_importance.png
-│
-├── models/
-│   └── xgboost_model.pkl
-=======
 ├── images/
 │   ├── banner.png
 │   ├── life_graph.png
@@ -125,10 +126,17 @@ Internship/
 │   ├── behavior_report.txt
 │   ├── feedback.csv
 │   ├── feature_importance.png
-│   └── life_graph.graphml
- (Complete Week 5: Real-Time Intervention System)
+│   ├── life_graph.graphml
+│   └── intervention_log.csv
 │
 ├── src/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── app.py
+│   │   ├── routes.py
+│   │   ├── schemas.py
+│   │   └── database.py
+│   │
 │   ├── parser.py
 │   ├── validation.py
 │   ├── feature_engineering.py
@@ -150,18 +158,21 @@ Internship/
 │   ├── contextual_bandit.py
 │   ├── feedback.py
 │   ├── intervention_engine.py
+│   ├── discipline_score.py
+│   ├── behavioral_debt.py
 │   └── main.py
 │
-├── Dockerfile
-├── .gitignore
-└── README.md
-
-=======
+├── tests/
+│   ├── test_discipline_score.py
+│   ├── test_behavioral_debt.py
+│   ├── test_integration.py
+│   └── load_test.py
+│
+├── lifeos.db
 ├── requirements.txt
+├── Dockerfile
 ├── README.md
 └── .gitignore
- (Complete Week 5: Real-Time Intervention System)
-```
 
 ---
 
@@ -183,50 +194,9 @@ Internship/
 | python-telegram-bot | Telegram Alerts |
 | Git | Version Control |
 | GitHub | Repository Hosting |
-
----
-
-# 🔄 System Workflow
-
-```text
-User Data
-     │
-     ▼
-Data Ingestion
-     │
-     ▼
-Validation
-     │
-     ▼
-Feature Engineering
-     │
-     ▼
-SQLite Database
-     │
-     ▼
-Behavior Analysis
-     │
-     ├── Entropy
-     ├── Context Switching
-     ├── Life Graph
-     └── Sequence Mining
-     │
-     ▼
-Prediction Engine
-     ├── XGBoost
-     ├── Hidden Markov Model
-     └── Granger Causality
-     │
-     ▼
-Intervention Engine
-     ├── Triggers
-     ├── Notifications
-     ├── Contextual Bandit
-     └── Feedback Tracking
-     │
-     ▼
-Behavioral Intelligence Report
-```
+| FastAPI | REST Backend |
+| Pydantic | Data Validation |
+| pytest | Unit Testing |
 
 ---
 
@@ -267,6 +237,14 @@ Behavioral Intelligence Report
 - Desktop Notifications
 - Telegram Notifications
 - Feedback Tracking
+- Discipline Score
+- Behavioral Debt Score
+- REST API
+- Swagger Documentation
+- Goal Tracking
+- Unit Test Reports
+- Integration Test Reports
+- Load Test Results
 
 ---
 
@@ -307,20 +285,43 @@ docker run lifeos
 ```
 
 > Docker Desktop is required to run these commands.
+# 📡 API Documentation
+
+After starting the server:
+
+```bash
+uvicorn src.api.app:app --reload
+```
+
+Open:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+Interactive API documentation is automatically generated using **Swagger UI**.
+
+Available endpoints include:
+
+- GET /
+- POST /log
+- GET /logs
+- GET /score
+- GET /debt
+- POST /goals
+- GET /goals
 
 ---
 
 # 📈 Roadmap
-
 - ✅ Week 1
 - ✅ Week 2
 - ✅ Week 3
 - ✅ Week 4
 - ✅ Week 5
-- ⏳ Week 6
+- ✅ Week 6
 - ⏳ Week 7
 - ⏳ Week 8
-
 ---
 
 # 💡 Software Engineering Principles
@@ -332,6 +333,8 @@ docker run lifeos
 - Machine Learning Integration
 - Scalable Design
 - Maintainable Code
+- RESTful API Design
+- Test-Driven Development
 
 ---
 
