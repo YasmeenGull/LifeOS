@@ -101,7 +101,7 @@ The project follows **Clean Architecture**, **Modular Programming**, and **Softw
 
 # 📂 Project Structure
 
-=======
+```text
 Internship/
 
 ├── data/
@@ -173,7 +173,7 @@ Internship/
 ├── Dockerfile
 ├── README.md
 └── .gitignore
-
+```
 ---
 
 # ⚙️ Technology Stack
@@ -281,8 +281,8 @@ docker build -t lifeos .
 docker run -p 8000:8000 lifeos
 
 > Docker Desktop is required to run these commands.
+> 
 # 📡 API Documentation
-
 After starting the server:
 
 ```bash
