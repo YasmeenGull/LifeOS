@@ -16,6 +16,7 @@ The system evolves through multiple development phases:
 - Week 3 – Behavioral Analysis & Life Graph
 - Week 4 – Prediction Engine & Causal Discovery
 - Week 5 – Real-Time Intervention System & Adaptive Behavior Nudging
+- Week 6 – Discipline Score Engine & Production Backend API
 
 # Objectives
 The system aims to:
@@ -37,11 +38,17 @@ The system aims to:
 - Select interventions using a Contextual Bandit (LinUCB) strategy.
 - Track intervention effectiveness through a feedback system.
 - Measure response rate and ignore rate for behavioral interventions.
+- Compute a Discipline Score using Focus Ratio, Recovery Time, and Sleep Consistency.
+- Model Behavioral Debt accumulation and gradual recovery.
+- Provide a production-ready REST API using FastAPI.
+- Expose logging, querying, scoring, and goal management endpoints.
+- Validate API requests using Pydantic models.
+- Generate interactive OpenAPI (Swagger) documentation.
+- Verify system reliability through Unit Tests, Integration Tests, and Basic Load Testing.
 
 ---
 
 # Project Architecture
-
                     User Behavioral Data
                               │
                               ▼
@@ -77,41 +84,51 @@ The system aims to:
      XGBoost       HMM      Granger Causality
                               │
                               ▼
-                  Model Comparison
-                              │
-                              ▼
              Real-Time Intervention System
         ┌────────────┬────────────┬────────────┐
         ▼            ▼            ▼
  Rule Triggers  Contextual Bandit  Notifications
                               │
                               ▼
-                  Feedback Tracking
+                Discipline Score Engine
+        ┌────────────┬────────────┬────────────┐
+        ▼            ▼            ▼
+ Focus Ratio  Recovery Time  Sleep Consistency
                               │
                               ▼
-               Behavioral Intelligence Report
+                 Behavioral Debt Engine
+                              │
+                              ▼
+                  FastAPI REST Backend
+        ┌────────────┬────────────┬────────────┐
+        ▼            ▼            ▼
+ Log API     Query API     Goal API
+        │
+        ▼
+ OpenAPI Documentation
+        │
+        ▼
+ Unit Tests • Integration Tests • Load Tests
+        │
+        ▼
+          Behavioral Intelligence Report
 # Folder Structure
 
 Internship/
 
 ├── data/
-│   ├── sample/
-│   ├── raw/
-│   └── processed/
-│
 ├── docs/
-│   └── Architecture_Design_Document.md
-│
-├── output/
-│   ├── behavior_report.txt
-│   ├── feedback.csv
-│   ├── life_graph.graphml
-│   └── feature_importance.png
-│
+├── images/
 ├── models/
-│   └── xgboost_model.pkl
+├── output/
 │
 ├── src/
+│   ├── api/
+│   │   ├── app.py
+│   │   ├── routes.py
+│   │   ├── schemas.py
+│   │   └── database.py
+│   │
 │   ├── parser.py
 │   ├── validation.py
 │   ├── feature_engineering.py
@@ -133,13 +150,20 @@ Internship/
 │   ├── contextual_bandit.py
 │   ├── feedback.py
 │   ├── intervention_engine.py
+│   ├── discipline_score.py
+│   ├── behavioral_debt.py
 │   └── main.py
+│
+├── tests/
+│   ├── test_discipline_score.py
+│   ├── test_behavioral_debt.py
+│   ├── test_integration.py
+│   └── load_test.py
 │
 ├── requirements.txt
 ├── Dockerfile
-├── .gitignore
-└── README.md
-
+├── README.md
+└── .gitignore
 ---
 # Module Responsibilities
 ## parser.py
@@ -215,11 +239,40 @@ Records intervention outcomes, calculates response rate and ignore rate, and eva
 ## intervention_engine.py
 Coordinates trigger detection, intervention selection, notification delivery, and feedback collection to provide adaptive behavioral support.
 
+---
+## discipline_score.py
+Calculates a unified Discipline Score by combining Focus Ratio, Recovery Time, and Sleep Consistency into a single productivity metric.
+
+---
+## behavioral_debt.py
+Implements Behavioral Debt accumulation and decay to model the long-term impact of unproductive behavioral patterns.
+
+---
+## api/app.py
+Initializes the FastAPI application and configures API metadata, startup events, and OpenAPI documentation.
+
+---
+## api/routes.py
+Defines REST API endpoints for logging activities, querying records, calculating discipline scores, behavioral debt, and managing goals.
+
+---
+## api/schemas.py
+Defines Pydantic models used for validating incoming API requests and responses.
+
+---
+## api/database.py
+Provides SQLite database operations used by the REST API.
+
+---
+## tests/
+Contains Unit Tests, Integration Tests, and Basic Load Tests to validate application correctness and reliability.
+
 
 # Technologies Used
 
 - Python
 - Pandas
+- NumPy
 - SQLite
 - NetworkX
 - Matplotlib
@@ -228,26 +281,33 @@ Coordinates trigger detection, intervention selection, notification delivery, an
 - XGBoost
 - hmmlearn
 - statsmodels
-- VS Code
+- FastAPI
+- Pydantic
+- Uvicorn
+- pytest
+- pytest-cov
+- Plyer
+- python-telegram-bot
 - Git
 - GitHub
-- NumPy
-- Plyer
-- Contextual Bandit (LinUCB)
+- VS Code
 
 ---
 
 # design Principles
+- Clean Architecture
 - Modular Programming
 - Separation of Concerns
 - Reusable Components
-- Clean Code
-- Easy Maintenance
-- Scalable Architecture
+- RESTful API Design
+- Test-Driven Development
+- Scalable System Design
+- Maintainable Code
 
 ---
 # Output
 
+The system generates:
 The system generates:
 
 - SQLite Database
@@ -265,18 +325,28 @@ The system generates:
 - Feedback Report
 - Response Rate
 - Ignore Rate
+- Discipline Score
+- Behavioral Debt Score
+- REST API
+- OpenAPI Documentation
+- Goal Management System
+- Unit Test Report
+- Integration Test Report
+- Load Test Results
 - Behavioral Intelligence Report
 ---
 
 # Future Improvements
 - Deep Learning–based Behavior Prediction
 - Reinforcement Learning for Adaptive Interventions
-- Telegram and Mobile Notifications
-- Interactive Dashboard
-- REST API Integration
-- Docker Container Deployment
-- Cloud-Based Data Storage
-- Mobile Application Integration
+- Mobile and Telegram Notifications
+- Interactive Analytics Dashboard
+- Authentication and User Management
+- Cloud Deployment (AWS / Azure)
+- Docker & Kubernetes Deployment
+- Real-Time Streaming Data Pipeline
+- AI Recommendation Engine
+- Cross-Platform Mobile Application
 
 ---
 Prepared for

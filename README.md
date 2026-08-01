@@ -274,15 +274,11 @@ python src/main.py
 
 Build
 
-```bash
+# Build image
 docker build -t lifeos .
-```
 
-Run
-
-```bash
-docker run lifeos
-```
+# Run container
+docker run -p 8000:8000 lifeos
 
 > Docker Desktop is required to run these commands.
 # 📡 API Documentation

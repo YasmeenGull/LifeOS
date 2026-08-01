@@ -55,7 +55,25 @@ python-telegram-bot
 # Numerical Computing
 # --------------------------
 numpy
+
+# --------------------------
+# Backend API (Week 6)
+# --------------------------
 fastapi
 uvicorn
+
+# --------------------------
+# Data Validation
+# --------------------------
 pydantic
+
+# --------------------------
+# Testing
+# --------------------------
 pytest
+pytest-cov
+
+# --------------------------
+# HTTP Client
+# --------------------------
+requests
