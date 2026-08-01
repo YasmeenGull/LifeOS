@@ -100,7 +100,6 @@ The project follows **Clean Architecture**, **Modular Programming**, and **Softw
 ---
 
 # 📂 Project Structure
-
 ```text
 Internship/
 
@@ -272,8 +271,6 @@ python src/main.py
 
 # 🐳 Docker
 
-Build
-
 # Build image
 docker build -t lifeos .
 
@@ -352,4 +349,3 @@ Tynovate AI Internship Program – 2026
 ⭐ If you found this project helpful, please consider giving it a Star!
 
 </p>
-(Complete Week 5: Real-Time Intervention System)
