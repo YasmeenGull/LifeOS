@@ -77,3 +77,9 @@ pytest-cov
 # HTTP Client
 # --------------------------
 requests
+
+# --------------------------
+# Dashboard
+# --------------------------
+streamlit
+plotly
