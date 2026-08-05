@@ -3,6 +3,9 @@ import streamlit as st
 from src.dashboard.layout import setup_page
 from src.dashboard.layout import sidebar
 from src.dashboard.metrics import show_metrics
+from src.dashboard.charts import discipline_chart
+from src.dashboard.charts import debt_chart
+from src.dashboard.charts import entropy_chart
 
 
 setup_page()
@@ -22,6 +25,14 @@ if page == "Dashboard":
     st.header("Dashboard")
 
     show_metrics()
+    
+    st.divider()
+
+    discipline_chart()
+
+    debt_chart()
+
+    entropy_chart()
 
 elif page == "Life Graph":
 
