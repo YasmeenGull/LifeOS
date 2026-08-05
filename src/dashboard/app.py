@@ -2,6 +2,7 @@ import streamlit as st
 
 from src.dashboard.layout import setup_page
 from src.dashboard.layout import sidebar
+from src.dashboard.metrics import show_metrics
 
 
 setup_page()
@@ -20,7 +21,7 @@ if page == "Dashboard":
 
     st.header("Dashboard")
 
-    st.info("Dashboard metrics will appear here.")
+    show_metrics()
 
 elif page == "Life Graph":
 
