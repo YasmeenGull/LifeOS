@@ -17,6 +17,7 @@ The system evolves through multiple development phases:
 - Week 4 – Prediction Engine & Causal Discovery
 - Week 5 – Real-Time Intervention System & Adaptive Behavior Nudging
 - Week 6 – Discipline Score Engine & Production Backend API
+- Week 7 – Visualization, Goal Alignment & Productivity Simulation
 
 # Objectives
 The system aims to:
@@ -45,6 +46,12 @@ The system aims to:
 - Validate API requests using Pydantic models.
 - Generate interactive OpenAPI (Swagger) documentation.
 - Verify system reliability through Unit Tests, Integration Tests, and Basic Load Testing.
+- Build a professional Streamlit Dashboard for behavioral analytics.
+- Visualize Behavioral Entropy, Discipline Score, and Behavioral Debt using Plotly.
+- Display the Life Graph through an interactive dashboard.
+- Implement a Goal–Behavior Alignment Engine to calculate daily behavioral requirements for achieving long-term goals.
+- Build a 30-Day Productivity Simulation comparing current behavioral patterns with optimized behavioral patterns.
+- Collect peer feedback through a dashboard feedback module and use it for continuous dashboard improvements.
 
 ---
 
@@ -112,6 +119,21 @@ The system aims to:
         │
         ▼
           Behavioral Intelligence Report
+                  │
+        ▼
+         Streamlit Dashboard
+ ┌────────────┬────────────┬────────────┐
+ ▼            ▼            ▼
+Metrics   Goal Alignment   Simulation
+ │            │            │
+ ▼            ▼            ▼
+Plotly Charts  Daily Targets  30-Day Forecast
+        │
+        ▼
+ User Feedback Collection
+        │
+        ▼
+Behavioral Intelligence Report
 # Folder Structure
 
 Internship/
@@ -128,6 +150,16 @@ Internship/
 │   │   ├── routes.py
 │   │   ├── schemas.py
 │   │   └── database.py
+|   ├── dashboard/
+│   |   ├── __init__.py
+│   |   ├── app.py
+│   |   ├── layout.py
+│   |   ├── metrics.py
+│   |   ├── charts.py
+│   |   ├── goal_alignment.py
+│   |   ├── simulation.py
+│   |   ├── feedback.py
+│   |   └── utils.py
 │   │
 │   ├── parser.py
 │   ├── validation.py
@@ -267,6 +299,35 @@ Provides SQLite database operations used by the REST API.
 ## tests/
 Contains Unit Tests, Integration Tests, and Basic Load Tests to validate application correctness and reliability.
 
+## dashboard/app.py
+Entry point of the Streamlit dashboard. Initializes the application, configures navigation, and integrates all dashboard components.
+
+---
+## dashboard/layout.py
+Defines the dashboard layout, page configuration, sidebar navigation, and common interface elements.
+
+---
+## dashboard/metrics.py 
+Displays key behavioral indicators including Behavioral Entropy, Discipline Score, and Behavioral Debt.
+
+---
+## dashboard/charts.py
+Creates interactive Plotly visualizations for behavioral trends and productivity analytics.
+
+---
+## dashboard/goal_alignment.py
+Implements the Goal–Behavior Alignment Engine that calculates daily behavioral requirements needed to achieve long-term productivity goals.
+
+---
+## dashboard/simulation.py
+Implements the 30-Day Productivity Simulation by comparing projected productivity under current and optimized behavioral patterns.
+
+---
+## dashboard/feedback.py
+Collects user feedback regarding dashboard usability and stores peer evaluation for continuous improvement.
+
+---
+
 
 # Technologies Used
 
@@ -288,6 +349,8 @@ Contains Unit Tests, Integration Tests, and Basic Load Tests to validate applica
 - pytest-cov
 - Plyer
 - python-telegram-bot
+- Streamlit
+- Plotly
 - Git
 - GitHub
 - VS Code
@@ -298,8 +361,10 @@ Contains Unit Tests, Integration Tests, and Basic Load Tests to validate applica
 - Clean Architecture
 - Modular Programming
 - Separation of Concerns
+- Single Responsibility Principle
 - Reusable Components
 - RESTful API Design
+- Interactive Dashboard Design
 - Test-Driven Development
 - Scalable System Design
 - Maintainable Code
@@ -334,6 +399,12 @@ The system generates:
 - Integration Test Report
 - Load Test Results
 - Behavioral Intelligence Report
+- Streamlit Dashboard
+- Interactive Plotly Visualizations
+- Goal–Behavior Alignment Report
+- Daily Behavioral Targets
+- 30-Day Productivity Forecast
+- Dashboard Feedback Report
 ---
 
 # Future Improvements
@@ -347,6 +418,11 @@ The system generates:
 - Real-Time Streaming Data Pipeline
 - AI Recommendation Engine
 - Cross-Platform Mobile Application
+- Real-Time Dashboard Updates
+- Multi-User Dashboard Support
+- Personalized AI Coaching
+- Advanced Productivity Forecasting
+- Cloud Dashboard Deployment
 
 ---
 Prepared for
