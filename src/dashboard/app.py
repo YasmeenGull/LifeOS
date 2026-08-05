@@ -7,6 +7,7 @@ from src.dashboard.charts import discipline_chart
 from src.dashboard.charts import debt_chart
 from src.dashboard.charts import entropy_chart
 from src.dashboard.goal_alignment import show_goal_alignment
+from src.dashboard.simulation import show_simulation
 
 
 setup_page()
@@ -27,19 +28,16 @@ if page == "Dashboard":
 
     show_metrics()
     
-    st.divider()
 
+
+elif page == "Life Graph":
+
+    
     discipline_chart()
 
     debt_chart()
 
     entropy_chart()
-
-elif page == "Life Graph":
-
-    st.header("Life Graph")
-
-    st.info("Life Graph visualization will appear here.")
 
 elif page == "Goal Alignment":
 
@@ -47,6 +45,4 @@ elif page == "Goal Alignment":
 
 elif page == "Simulation":
 
-    st.header("30-Day Simulation")
-
-    st.info("Simulation results will appear here.")
+    show_simulation()
