@@ -6,6 +6,7 @@ from src.dashboard.metrics import show_metrics
 from src.dashboard.charts import discipline_chart
 from src.dashboard.charts import debt_chart
 from src.dashboard.charts import entropy_chart
+from src.dashboard.goal_alignment import show_goal_alignment
 
 
 setup_page()
@@ -42,9 +43,7 @@ elif page == "Life Graph":
 
 elif page == "Goal Alignment":
 
-    st.header("Goal Alignment")
-
-    st.info("Goal Alignment engine will appear here.")
+    show_goal_alignment()
 
 elif page == "Simulation":
 
