@@ -8,25 +8,33 @@ from src.dashboard.charts import debt_chart
 from src.dashboard.charts import entropy_chart
 from src.dashboard.goal_alignment import show_goal_alignment
 from src.dashboard.simulation import show_simulation
+from src.dashboard.feedback import feedback_form
 
 
 setup_page()
 
 page = sidebar()
-
-st.title("🧠 LifeOS Dashboard")
-
-st.write(
-    "Welcome to the LifeOS Behavioral Analytics Dashboard."
-)
-
 st.markdown("---")
 
 if page == "Dashboard":
 
-    st.header("Dashboard")
+    st.title("🧠 LifeOS Behavioral Dashboard")
+    st.write(
+    "Welcome to the LifeOS Behavioral Analytics Dashboard."
+)
 
-    show_metrics()
+    tab1, tab2 = st.tabs([
+        "📊 Metrics",
+        "📈 Analytics"
+    ])
+
+    with tab1:
+        show_metrics()
+
+    with tab2:
+        discipline_chart()
+        debt_chart()
+        entropy_chart()
     
 
 
@@ -46,3 +54,7 @@ elif page == "Goal Alignment":
 elif page == "Simulation":
 
     show_simulation()
+    
+elif page == "Feedback":
+
+    feedback_form()

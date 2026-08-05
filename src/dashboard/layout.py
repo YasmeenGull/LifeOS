@@ -18,21 +18,23 @@ def sidebar():
 
     page = st.sidebar.radio(
 
-        "Navigation",
+    "Navigation",
 
-        [
+    [
 
-            "Dashboard",
+        "Dashboard",
 
-            "Life Graph",
+        "Life Graph",
 
-            "Goal Alignment",
+        "Goal Alignment",
 
-            "Simulation"
+        "Simulation",
 
-        ]
+        "Feedback"
 
-    )
+    ]
+
+)
 
     st.sidebar.markdown("---")
 
