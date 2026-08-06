@@ -43,6 +43,7 @@ The project follows **Clean Architecture**, **Modular Programming**, and **Softw
 | Week 4 | Prediction Engine & Causal Discovery | ✅ |
 | Week 5 | Real-Time Intervention System | ✅ |
 | Week 6 | Discipline Score Engine & Backend API | ✅ |
+| Week 7 | Dashboard, Goal Alignment & Simulation | ✅ |
 
 ---
 
@@ -97,6 +98,14 @@ The project follows **Clean Architecture**, **Modular Programming**, and **Softw
 - Integration Testing
 - Basic Load Testing
 
+## ✅ Week 7
+- Streamlit Dashboard
+- Interactive Plotly Charts
+- Behavioral Metrics Dashboard
+- Goal–Behavior Alignment Engine
+- 30-Day Productivity Simulation
+- Dashboard User Feedback
+
 ---
 
 # 📂 Project Structure
@@ -104,37 +113,27 @@ The project follows **Clean Architecture**, **Modular Programming**, and **Softw
 Internship/
 
 ├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── sample/
-│
 ├── docs/
-│   └── Architecture_Design_Document.md
-│
 ├── images/
-│   ├── banner.png
-│   ├── life_graph.png
-│   ├── feature_importance.png
-│   ├── prediction_comparison.png
-│   └── console_output.png
-│
 ├── models/
-│   └── xgboost_model.pkl
-│
 ├── output/
-│   ├── behavior_report.txt
-│   ├── feedback.csv
-│   ├── feature_importance.png
-│   ├── life_graph.graphml
-│   └── intervention_log.csv
 │
 ├── src/
 │   ├── api/
-│   │   ├── __init__.py
 │   │   ├── app.py
 │   │   ├── routes.py
 │   │   ├── schemas.py
 │   │   └── database.py
+|   ├── dashboard/
+│   |   ├── __init__.py
+│   |   ├── app.py
+│   |   ├── layout.py
+│   |   ├── metrics.py
+│   |   ├── charts.py
+│   |   ├── goal_alignment.py
+│   |   ├── simulation.py
+│   |   ├── feedback.py
+│   |   └── utils.py
 │   │
 │   ├── parser.py
 │   ├── validation.py
@@ -167,7 +166,6 @@ Internship/
 │   ├── test_integration.py
 │   └── load_test.py
 │
-├── lifeos.db
 ├── requirements.txt
 ├── Dockerfile
 ├── README.md
@@ -196,6 +194,8 @@ Internship/
 | FastAPI | REST Backend |
 | Pydantic | Data Validation |
 | pytest | Unit Testing |
+| Streamlit | Interactive Dashboard |
+| Plotly | Interactive Charts |
 
 ---
 
@@ -244,6 +244,11 @@ Internship/
 - Unit Test Reports
 - Integration Test Reports
 - Load Test Results
+- Streamlit Dashboard
+- Interactive Plotly Charts
+- Goal–Behavior Alignment
+- 30-Day Productivity Simulation
+- Dashboard Feedback Report
 
 ---
 
@@ -265,6 +270,11 @@ pip install -r requirements.txt
 
 ```bash
 python src/main.py
+```
+## Run Dashboard
+
+```bash
+streamlit run src/dashboard/app.py
 ```
 
 ---
@@ -306,28 +316,58 @@ Available endpoints include:
 
 ---
 
+# 8. API Documentation
+
+Keep this section.
+
+After it add
+
+````md
+# 📊 Dashboard
+
+Run the Streamlit dashboard:
+
+```bash
+streamlit run src/dashboard/app.py
+```
+
+The dashboard provides:
+
+- Behavioral Entropy
+- Discipline Score
+- Behavioral Debt
+- Interactive Plotly Visualizations
+- Goal–Behavior Alignment
+- 30-Day Productivity Simulation
+- Dashboard Feedback
+
+---
+
 # 📈 Roadmap
+# 📈 Roadmap
+
 - ✅ Week 1
 - ✅ Week 2
 - ✅ Week 3
 - ✅ Week 4
 - ✅ Week 5
 - ✅ Week 6
-- ⏳ Week 7
+- ✅ Week 7
 - ⏳ Week 8
----
 
 # 💡 Software Engineering Principles
 
 - Clean Architecture
 - Modular Programming
 - Separation of Concerns
+- Single Responsibility Principle (SRP)
 - Reusable Components
 - Machine Learning Integration
+- RESTful API Design
+- Interactive Dashboard Design
+- Test-Driven Development
 - Scalable Design
 - Maintainable Code
-- RESTful API Design
-- Test-Driven Development
 
 ---
 
