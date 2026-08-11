@@ -1,13 +1,14 @@
 # ==========================================
 # LifeOS - Requirements
 # Tynovate AI Internship 2026
-# Weeks 1 - 6
+# Weeks 1 - 8
 # ==========================================
 
 # --------------------------
 # Data Processing
 # --------------------------
 pandas
+numpy
 
 # --------------------------
 # Machine Learning
@@ -30,6 +31,7 @@ networkx
 # Data Visualization
 # --------------------------
 matplotlib
+plotly
 
 # --------------------------
 # Natural Language Processing
@@ -52,12 +54,7 @@ plyer
 python-telegram-bot
 
 # --------------------------
-# Numerical Computing
-# --------------------------
-numpy
-
-# --------------------------
-# Backend API (Week 6)
+# Backend API
 # --------------------------
 fastapi
 uvicorn
@@ -77,9 +74,24 @@ pytest-cov
 # HTTP Client
 # --------------------------
 requests
+httpx
 
 # --------------------------
-# Dashboard
+# Dashboard - Week 7
 # --------------------------
 streamlit
-plotly
+
+# --------------------------
+# LLM Coach - Week 8
+# --------------------------
+anthropic
+
+# --------------------------
+# Environment Configuration - Week 8
+# --------------------------
+python-dotenv
+
+# --------------------------
+# Logging & Monitoring - Week 8
+# --------------------------
+psutil
