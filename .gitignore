@@ -1,24 +1,60 @@
+# ==========================================
+# LifeOS - Git Ignore
+# Tynovate AI Internship 2026
+# Weeks 1 - 8
+# ==========================================
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
 # Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
 
 # Virtual environments
 venv/
 .venv/
+env/
 
 # VS Code
 .vscode/
 
 # Database
 *.db
+*.sqlite
+*.sqlite3
 
-# Python cache files
-.pytest_cache/
+# Generated model files
+*.pkl
+*.joblib
+
+# Generated outputs
+output/
+*.log
+
+# Python build files
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
 
 # OS files
 .DS_Store
 Thumbs.db
 
+# Streamlit
+.streamlit/secrets.toml
 
-# Jupyter
-.ipynb_checkpoints/
+# Temporary files
+*.tmp
+*.temp
