@@ -2,12 +2,14 @@ from anthropic import APIError
 
 from src.coach.anthropic_client import AnthropicCoachClient
 from src.coach.fallback_report import FallbackCoachReport
+from src.monitoring.logger import get_logger
 
 
 class WeeklyCoachReport:
     """Generate weekly behavioral coaching reports."""
 
     def __init__(self):
+        self.logger = get_logger("lifeos.coach")
         self.client = AnthropicCoachClient()
         self.fallback = FallbackCoachReport()
 
@@ -17,9 +19,11 @@ class WeeklyCoachReport:
         discipline_score,
         behavioral_debt,
         focus_ratio,
-        recovery_time
+        recovery_time,
     ):
         """Generate an AI report or use the local fallback."""
+
+        self.logger.info("Generating weekly coach report.")
 
         prompt = f"""
 You are the LifeOS Behavioral Coach.
@@ -46,30 +50,40 @@ Keep the report concise, professional and actionable.
 """
 
         try:
-            return self.client.generate_response(prompt)
+            report = self.client.generate_response(prompt)
+
+            self.logger.info(
+                "Weekly coach report generated successfully."
+            )
+
+            return report
 
         except APIError as error:
-            print(
-                f"Anthropic API unavailable: {error}"
+            self.logger.warning(
+                "Anthropic API unavailable. Using local fallback: %s",
+                error,
             )
+
             return self._generate_fallback(
                 entropy,
                 discipline_score,
                 behavioral_debt,
                 focus_ratio,
-                recovery_time
+                recovery_time,
             )
 
         except Exception as error:
-            print(
-                f"LLM service unavailable: {error}"
+            self.logger.error(
+                "Unexpected coach service error. Using fallback: %s",
+                error,
             )
+
             return self._generate_fallback(
                 entropy,
                 discipline_score,
                 behavioral_debt,
                 focus_ratio,
-                recovery_time
+                recovery_time,
             )
 
     def _generate_fallback(
@@ -78,14 +92,16 @@ Keep the report concise, professional and actionable.
         discipline_score,
         behavioral_debt,
         focus_ratio,
-        recovery_time
+        recovery_time,
     ):
         """Generate a local report when the LLM is unavailable."""
+
+        self.logger.info("Generating local fallback coach report.")
 
         return self.fallback.generate(
             entropy=entropy,
             discipline_score=discipline_score,
             behavioral_debt=behavioral_debt,
             focus_ratio=focus_ratio,
-            recovery_time=recovery_time
+            recovery_time=recovery_time,
         )
