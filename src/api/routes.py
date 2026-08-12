@@ -4,6 +4,7 @@ from src.api.schemas import ActivityLog
 from src.api.database import insert_log
 from src.api.schemas import Goal
 from src.coach.coach_report import WeeklyCoachReport
+from src.monitoring.health import HealthMonitor
 
 from src.api.database import (
     insert_log,
@@ -123,3 +124,11 @@ def weekly_coach_report(
         "status": "success",
         "report": report
     }
+    
+@router.get("/health")
+def health_check():
+    """Return LifeOS service health status."""
+
+    monitor = HealthMonitor()
+
+    return monitor.check()
