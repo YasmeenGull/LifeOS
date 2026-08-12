@@ -19,12 +19,15 @@ class WeeklyCoachReport:
         focus_ratio,
         recovery_time
     ):
+        """Generate an AI report or use the local fallback."""
+
         prompt = f"""
 You are the LifeOS Behavioral Coach.
 
 Generate a professional weekly behavioral coaching report.
 
 Behavioral metrics:
+
 - Entropy: {entropy}
 - Discipline Score: {discipline_score}/100
 - Behavioral Debt: {behavioral_debt}
@@ -32,6 +35,7 @@ Behavioral metrics:
 - Recovery Time: {recovery_time}%
 
 Include:
+
 1. Weekly summary
 2. Behavioral strengths
 3. Areas for improvement
@@ -44,29 +48,44 @@ Keep the report concise, professional and actionable.
         try:
             return self.client.generate_response(prompt)
 
-        except APIError:
+        except APIError as error:
             print(
-                "Anthropic API unavailable. "
-                "Using local fallback coach."
+                f"Anthropic API unavailable: {error}"
             )
-
-            return self.fallback.generate(
-                entropy=entropy,
-                discipline_score=discipline_score,
-                behavioral_debt=behavioral_debt,
-                focus_ratio=focus_ratio,
-                recovery_time=recovery_time
+            return self._generate_fallback(
+                entropy,
+                discipline_score,
+                behavioral_debt,
+                focus_ratio,
+                recovery_time
             )
 
         except Exception as error:
             print(
                 f"LLM service unavailable: {error}"
             )
-
-            return self.fallback.generate(
-                entropy=entropy,
-                discipline_score=discipline_score,
-                behavioral_debt=behavioral_debt,
-                focus_ratio=focus_ratio,
-                recovery_time=recovery_time
+            return self._generate_fallback(
+                entropy,
+                discipline_score,
+                behavioral_debt,
+                focus_ratio,
+                recovery_time
             )
+
+    def _generate_fallback(
+        self,
+        entropy,
+        discipline_score,
+        behavioral_debt,
+        focus_ratio,
+        recovery_time
+    ):
+        """Generate a local report when the LLM is unavailable."""
+
+        return self.fallback.generate(
+            entropy=entropy,
+            discipline_score=discipline_score,
+            behavioral_debt=behavioral_debt,
+            focus_ratio=focus_ratio,
+            recovery_time=recovery_time
+        )
