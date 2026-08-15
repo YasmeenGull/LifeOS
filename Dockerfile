@@ -1,36 +1,58 @@
 # ==========================================
-# LifeOS Dockerfile
+# LifeOS - Multi-Stage Dockerfile
 # Tynovate AI Internship 2026
-# Weeks 1 - 7
+# Week 8 - Deployment
 # ==========================================
 
-# Use official Python image
-FROM python:3.13-slim
+# ==========================================
+# Base Stage
+# ==========================================
+FROM python:3.11-slim AS base
 
-# Environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
 
-# Working directory
 WORKDIR /app
 
-# Copy dependency file
+# System dependencies required by some ML packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy dependencies first for Docker layer caching
 COPY requirements.txt .
 
-# Upgrade pip
-RUN pip install --upgrade pip
+# Install Python dependencies
+RUN pip install --no-cache-dir \
+    --default-timeout=1000 \
+    --retries=10 \
+    -r requirements.txt
 
-# Install project dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# ==========================================
+# API Stage
+# ==========================================
+FROM base AS api
 
-# Copy project files
 COPY . .
 
-# Expose FastAPI port
+# Make sure Python can import the project package
+ENV PYTHONPATH=/app
+
 EXPOSE 8000
 
-# Expose Streamlit port
+CMD ["uvicorn", "src.api.app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+# ==========================================
+# Dashboard Stage
+# ==========================================
+FROM base AS dashboard
+
+COPY . .
+
+# Make sure Streamlit can import src.*
+ENV PYTHONPATH=/app
+
 EXPOSE 8501
 
-# Default command (FastAPI Backend)
-CMD ["uvicorn", "src.api.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["streamlit", "run", "/app/src/dashboard/app.py", "--server.address=0.0.0.0", "--server.port=8501"]
