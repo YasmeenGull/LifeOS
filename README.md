@@ -5,16 +5,6 @@
 <p align="center">
 
 
-
-
-
-
-
-
-
-
-
-
 </p>
 
 📌 Project Overview
@@ -94,6 +84,7 @@ AI-assisted coaching
 Weekly behavioral insights
 Personalized productivity guidance
 📂 Project Structure
+```text
 LifeOS/
 │
 ├── data/
@@ -249,6 +240,7 @@ https://github.com/YasmeenGull/LifeOS
 The final internship phase focused on transforming LifeOS into a deployable and user-facing system.
 
 📈 Roadmap
+```md
 ✅ Week 1 — Foundations
 ✅ Week 2 — Data Ingestion
 ✅ Week 3 — Behavioral Engine
