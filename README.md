@@ -16,6 +16,7 @@ The system collects behavioral data from multiple sources, processes and analyze
 The project was developed using modular programming, clean architecture, RESTful API design, Machine Learning, interactive visualization, automated testing, and containerized deployment.
 
 🚀 Weekly Progress
+```md
 Week	Theme	Status
 Week 1	Foundations & Environment Setup	✅
 Week 2	Behavioral Data Ingestion & Preprocessing	✅
@@ -27,62 +28,8 @@ Week 7	Dashboard, Goal Alignment & Simulation	✅
 Week 8	LLM Coach, Deployment & Showcase	✅
 
 Internship project status: 100% complete ✅
+```
 
-✨ Key Features
-🧠 Behavioral Intelligence
-Behavioral entropy analysis
-Context-switching cost
-Sequence mining
-Life Graph generation
-Behavioral reports
-🤖 Machine Learning
-XGBoost prediction
-Hidden Markov Model
-Granger Causality analysis
-Model comparison
-Feature importance
-Saved ML models
-🔔 Intervention System
-Rule-based behavioral triggers
-Desktop notifications
-Telegram notifications
-Contextual Bandit (LinUCB)
-Intervention Engine
-Feedback tracking
-📊 Productivity & Goals
-Discipline Score
-Behavioral Debt
-Goal management
-Goal–Behavior Alignment
-30-Day Productivity Simulation
-🌐 Backend
-FastAPI REST API
-Pydantic validation
-SQLite integration
-Swagger/OpenAPI documentation
-Unit testing
-Integration testing
-Load testing
-📈 Interactive Dashboard
-Streamlit dashboard
-Interactive Plotly charts
-Behavioral metrics
-Goal alignment
-Productivity simulation
-Dashboard feedback
-🚀 Deployment
-Docker containerization
-Docker Compose
-Containerized FastAPI API
-Containerized Streamlit dashboard
-Public Streamlit deployment
-GitHub repository integration
-GitHub Actions workflow
-💬 LLM Coach
-Natural-language behavioral reporting
-AI-assisted coaching
-Weekly behavioral insights
-Personalized productivity guidance
 📂 Project Structure
 ```text
 LifeOS/
@@ -146,7 +93,9 @@ LifeOS/
 ├── docker-compose.yml
 ├── README.md
 └── .gitignore
+```
 ⚙️ Technology Stack
+```md
 Technology	Purpose
 Python	Core Development
 Pandas	Data Processing
@@ -170,7 +119,7 @@ Docker	Containerization
 Docker Compose	Multi-service Deployment
 GitHub Actions	CI/CD Automation
 GitHub	Version Control & Hosting
-
+```
 🛠️ Installation
 1. Clone Repository
 git clone https://github.com/YasmeenGull/LifeOS.git
@@ -250,6 +199,7 @@ The final internship phase focused on transforming LifeOS into a deployable and 
 ✅ Week 7 — Dashboard & Simulation
 ✅ Week 8 — LLM Coach & Deployment
 🎯 Final Status: Completed
+```
 💡 Software Engineering Principles
 Clean Architecture
 Modular Programming
